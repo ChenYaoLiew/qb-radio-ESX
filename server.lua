@@ -24,6 +24,6 @@ end)
 for channel, config in pairs(Config.RestrictedChannels) do
     exports['pma-voice']:addChannelCheck(channel, function(source)
         local Player = ESX.GetPlayerFromId(source)
-        return config[Player.PlayerData.job.name]
+        return config[Player.getJob().name]
     end)
 end
